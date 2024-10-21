@@ -56,7 +56,28 @@ const userArray=[
 // console.log(Object.hasOwnProperty('name'));    // Returns boolean
 
 
-const {courseInstructor: instructor} = course
 
-console.log(courseInstructor);
+// ***********************************************************************************************
+// => Object de-structuring
+const course={
+    name:"JS",
+    courseInstructor:"ABD",
+    price:"Free"
+}
+const {courseInstructor: instructor} = course
+// console.log(courseInstructor);
 console.log(instructor);
+
+// JSON 
+// {
+//     "name": "hitesh",
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+// => We can also do de-structuring on array
+// [
+//     {},
+//     {},
+//     {}
+// ]
