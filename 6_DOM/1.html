@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+<!--  getElementBy.....
+document.getElementById("title")
+<h1 id=​"title" class=​"heading" style=​"background-color:​ green;​ border-radius:​ 15px;​ padding:​ 5px;​">​…​</h1>​"DOM learning on Chai aur code "<span style=​"display:​ none;​">​test text​</span>​</h1>​
+const title=document.getElementById("title")
+undefined
+title.style.backgroundColor="green"
+'green'
+const title=document.getElementsByClassName("text")
+undefined
+const title=document.getElementsByClassName("heading")
+undefined
+document.getElementsByClassName("heading")
+const title=document.getElementById("title").id
+undefined
+document.getElementById("title").id
+'title'
+document.getElementById("title").className
+'heading'
+document.getElementById("title").getAttribute
+ƒ getAttribute() { [native code] }
+document.getElementById("title").getAttribute('id')
+'title'
+document.getElementById("title").getAttribute('class')
+'heading'
+document.getElementById("title").setAttribute('class','sheading')          // Class name overwrite
+undefined
+document.getElementById("title").setAttribute('class','heading')
+undefined
+const title=document.getElementById("title")
+undefined
+title.style.backgroundColor="green"
+'green'
+title.style.borderRadius="15px"
+'15px'
+title.style.padding="5px"
+'5px' -->
+
+
+<!-- INNER TEXT, INNER HTML, TEXT CONTENT =>
+const title=document.getElementById('title')
+undefined
+title.innerHTML                                    // It also shows the HTML tags => eg. <span>
+'DOM learning on Chai aur code <span style="display: none;">test text</span>'
+title.innerText                                    // It doesn't show the hidden content => eg.('test text')
+'DOM learning on Chai aur code'
+title.textContent                                  // It shows all the content => eg.('test text')
+'DOM learning on Chai aur code test text' -->
+
+<!-- Query Selector
+document.querySelector('h2')
+<h2>​Lorem ipsum dolor sit.​</h2>​
+ document.querySelector('li')
+<li class=​"list-item">​::marker​"one"</li>​
+document.querySelector('.heading')
+<h1 id=​"title" class=​"heading">​"DOM learning on Chai aur code "<span style=​"display:​ none;​">​test text​</span>​</h1>​
+document.querySelector('#title')
+<h1 id=​"title" class=​"heading">​…​</h1>​
+document.querySelector('input[type="password"]')
+<input type=​"password" name id fdprocessedid=​"wmlof">​ -->
+
+
+<!-- Making Variables 
+const myUl=document.querySelector("ul")
+undefined
+const green=myUl.querySelector("li")
+undefined
+green.style.backgroundColor="green"
+'green'
+green.style.padding="5px"
+'5px' 
+green.innerText
+'one'
+green.innerText="1"
+'1' -->
+
+
+<!-- querySelectorAll => It returns NodeList
+const tempLiList=document.querySelectorAll("li")
+undefined
+tempLiList
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+tempLiList.style.backgroundColor="green"     // querySelectorAll returns a list that's why we have to write the index
+Uncaught TypeError: Cannot set properties of undefined (setting 'backgroundColor')
+tempLiList[0].style.backgroundColor="green"
+'green'
+tempLiList[0].style.backgroundColour="green"
+'green' 
+tempLiList.forEach((li)=>{                 // forEach can be used directly on querySelectorAll
+    li.style.backgroundColor="green"       // By Using forEach the changes will apply on the whole list
+})
+undefined -->
+
+
+<!-- getElementsByClassName => It returns HTMLCollection
+const tempLiList=document.getElementsByClassName("list-item")
+undefined
+tempLiList.forEach((li)=>{    // forEach cannot used directly on getElementsByClassName first it should be converted to an array
+    console.log(li)
+})
+Uncaught TypeError: tempLiList.forEach is not a function 
+=> Creating Array from HTMLCollection
+myArray=Array.from(tempLiList)
+myArray.forEach((li)=>{
+    console.log(li)
+})
+<li class=​"list-item">​…​</li>​
+<li class=​"list-item">​…​</li>​
+<li class=​"list-item">​…​</li>​
+<li class=​"list-item">​…​</li>​
+undefined -->
