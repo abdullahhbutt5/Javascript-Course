@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<style>
+     body{
+        background-color: #212121;
+        color: #fff;"
+      }
+</style>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // Adding Element 
+    // const li = document.createElement('li')
+    // li.innerHTML='c++'
+    // document.querySelector('.language').appendChild(li)
+
+    // Adding Element using Function
+    // function addElement(element) {  
+    //     const li = document.createElement('li')
+    //     li.innerHTML=`${element}`
+    //     document.querySelector('.language').appendChild(li)
+    // }
+
+    // Optimal Method
+    function addElement(element){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(element))
+        document.querySelector('.language').appendChild(li)
+    }
+    addElement('js')
+    addElement('c++')
+    addElement('c#')
+    addElement('java')
+    addElement('python')
+    addElement('mongodb')
+    addElement('sql')
+   
+    // Edit / Replace
+    // const scdLang = document.querySelector('li:nth-child(2)')
+    // scdLang.innerHTML='abd'                                    // Not Optimized
+    // const newli = document.createElement('li')    // Optimized
+    // newli.textContent='flutter'
+    // scdLang.replaceWith(newli)
+
+    // const firstElement = document.querySelector('li:nth-child(1)')
+    // firstElement.outerHTML='<li>garbage</li>'                  // OuterHTML
+
+    // Remove
+    const thirdLang = document.querySelector('li:nth-child(3)')
+    thirdLang.remove()
+
+</script>
+</html>
