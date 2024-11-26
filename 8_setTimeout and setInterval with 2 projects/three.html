@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai our code</title>
+</head>
+<body>
+    <h1>Chai Our Code</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // setInterval(() => {
+    //     console.log('abd');
+    // }, 1000);
+
+    // const name = (n) => {
+    //     console.log(n);
+    // }
+    // const clear = setInterval(name, 1000,'hello');
+
+    // clearInterval(clear)
+
+    const name = (n) => {
+        console.log(n);
+    }
+    document.querySelector('#start').addEventListener('click',()=>{
+        const clear = setInterval(name, 1000,'hello');
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearInterval(clear)
+        })
+    })
+
+
+</script>
+</html>

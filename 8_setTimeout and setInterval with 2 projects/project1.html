@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Changer</title>
+</head>
+<body>
+    <h1>Colour Changer</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // Function for generating random color
+    const randColour = function () {
+        let hex = '0123456789ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color+= hex[Math.floor(Math.random()*16)]
+        }
+        return color
+    }
+    console.log(randColour());
+
+    //     MY Method
+    //     // Changes the backgroundcolor of body
+    // document.querySelector("#start").addEventListener("click",()=>{
+    //     let change = setInterval(() => {
+    //         document.body.style.backgroundColor=randColour()
+    //         console.log(randColour()); 
+    //     }, 1000);
+    //     // Stops changing the backgroundcolor
+    //     document.querySelector("#stop").addEventListener("click",()=>{
+    //         clearInterval(change) 
+    //     })
+    // })
+
+    // Efficient  Method
+    let id;
+        // Changes the backgroundcolor of body
+    const startChangingBG = function () {
+        if (!id){
+            id = setInterval(changeBGColor,1000)
+        }
+        function changeBGColor() {
+            document.body.style.backgroundColor=randColour()
+        }
+    }
+        // Stops changing the backgroundcolor
+    const stopChangingBG = function () {
+        clearInterval(id)
+        id = null        
+    }
+    document.querySelector('#start').addEventListener('click',startChangingBG)
+    document.querySelector('#stop').addEventListener('click',stopChangingBG)
+    
+</script>
+</html>
