@@ -53,7 +53,7 @@ console.log(typeof myFunction);                       // function
 //        Number => number
 //        String  => string
 //        Boolean  => boolean
-//        null  => object
+//        null  => undefined
 //        undefined  =>  undefined
 //        Symbol  =>  symbol
 //        BigInt  =>  bigint
